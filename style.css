@@ -11,8 +11,62 @@ body {
     color: #333;
 }
 
-/* Sezione Itinerario */
-#itinerario {
+/* Intestazione */
+header {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-content h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.header-content nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content nav li {
+  margin: 0 10px;
+}
+
+.header-content nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.header-content nav a:hover {
+  color: #ff6347;
+}
+
+.header-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* Sezioni */
+#itinerario, #destinazione, #note, #offer {
     background-color: #fffaf0;
     border-left: 5px solid #ff6347;
     border-radius: 5px;
@@ -20,35 +74,7 @@ body {
     margin: 20px;
 }
 
-/* Stile per il giorno */
-.giorno {
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* Titoli dei giorni */
-.giorno h3 {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 1.8em;
-    color: #b22222;
-    margin-bottom: 10px;
-}
-
-/* Testo dell'itinerario */
-.giorno p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #333;
-}
-
-.giorno p strong {
-    color: #b22222;
-}
-
-#itinerario h2 {
+#itinerario h2, #destinazione h2, #note h2, #offer h2 {
     font-family: 'Kaushan Script', cursive;
     color: #b22222;
     font-size: 2.5em;
@@ -56,50 +82,70 @@ body {
     margin-bottom: 20px;
 }
 
-#itinerario p {
+#itinerario .giorno h3, #destinazione p, #note p, #offer p {
     font-size: 1.1em;
     line-height: 1.8;
     color: #333;
     text-align: justify;
 }
 
-#itinerario p:first-letter {
+#itinerario .giorno h3 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.8em;
+    color: #b22222;
+    margin-bottom: 10px;
+}
+
+#destinazione p:first-letter, #note p:first-letter, #offer p:first-letter {
     font-size: 1.5em;
     font-weight: bold;
     color: #ff6347;
 }
 
-#itinerario p strong {
+#destinazione p strong, #note p strong, #offer p strong {
     color: #b22222;
 }
 
-#itinerario ul {
-    list-style-type: disc;
-    padding-left: 20px;
+/* Offerta */
+#offer .include, #offer .exclude {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-#itinerario ul li {
+#offer .include h3, #offer .exclude h3 {
+    font-family: 'Kaushan Script', cursive;
+    color: #b22222;
+    font-size: 1.8em;
     margin-bottom: 10px;
+}
+
+#offer .include p, #offer .exclude p {
     font-size: 1.1em;
+    line-height: 1.8;
     color: #333;
 }
 
-.sections-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+#offer .include p:first-letter, #offer .exclude p:first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6347;
 }
 
-#offer, #note {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#offer .include p strong, #offer .exclude p strong {
+    color: #b22222;
 }
 
-#offer h2, #note h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.check {
+    color: #008000; /* Verde */
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.exclude .check {
+    color: #ff0000; /* Rosso */
 }
 
 /* Bottoni e Link */
