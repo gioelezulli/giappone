@@ -1,0 +1,113 @@
+/* Font giapponese per i titoli */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* Generale */
+body {
+    font-family: 'Noto Sans JP', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Sezione Itinerario */
+#itinerario {
+    background-color: #fffaf0;
+    border-left: 5px solid #ff6347;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Stile per il giorno */
+.giorno {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Titoli dei giorni */
+.giorno h3 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.8em;
+    color: #b22222;
+    margin-bottom: 10px;
+}
+
+/* Testo dell'itinerario */
+.giorno p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+}
+
+.giorno p strong {
+    color: #b22222;
+}
+
+#itinerario h2 {
+    font-family: 'Kaushan Script', cursive;
+    color: #b22222;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#itinerario p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+#itinerario p:first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+#itinerario p strong {
+    color: #b22222;
+}
+
+#itinerario ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#itinerario ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.sections-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#offer, #note {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#offer h2, #note h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Bottoni e Link */
+a {
+    color: #b22222;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
