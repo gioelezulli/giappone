@@ -7,7 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+    <!-- Contenitore delle parole chiave -->
+    <div class="keyword-container">
+        <div class="keywords">
+            <span>Monte Fuji</span>
+            <span>Kyoto</span>
+            <span>Tokyo</span>
+            <!-- Aggiungi altre parole chiave qui -->
+        </div>
+        <button class="hamburger-icon" onclick="toggleMenu()">&#9776;</button>
+        <div class="dropdown-menu">
+            <span>Monte Fuji</span>
+            <span>Kyoto</span>
+            <span>Tokyo</span>
+            <!-- Aggiungi altre parole chiave qui -->
+        </div>
+    </div>
+
+    <header>
   <div class="header-content">
     <h1>Vivere un' Esperienza unica: IL GIAPPONE</h1>
     <nav>
@@ -223,5 +240,12 @@ Sarà un viaggio incredibile!
     <footer>
         <p>&copy; 2024 Il Mio Viaggio</p>
     </footer>
+	
+	<script>
+        function toggleMenu() {
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>

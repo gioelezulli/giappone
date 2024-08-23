@@ -207,6 +207,87 @@ a {
     text-decoration: none;
 }
 
+/* Contenitore delle parole chiave */
+.keyword-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    z-index: 1000; /* Mantieni questo z-index per assicurare che il container sia sopra il contenuto */
+}
+
+.keywords {
+    display: flex;
+    gap: 20px;
+}
+
+.keywords span {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Hamburger icon button - hidden on large screens */
+.hamburger-icon {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Dropdown menu for small screens */
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%; /* Posiziona il menu subito sotto il tasto hamburger */
+    right: 0;
+    width: 200px; /* Larghezza del menu a tendina */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1100; /* Assicurati che sia sopra il resto della pagina */
+}
+
+.dropdown-menu span {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+.dropdown-menu span:last-child {
+    border-bottom: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .keywords {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+	.dropdown-menu {
+        top: 50px; /* Posiziona il menu immediatamente sotto il tasto hamburger */
+        right: auto;
+        left: 10px; /* Allinea il menu con il tasto hamburger a sinistra */
+    }
+}
+
+@media (min-width: 769px) {
+    .dropdown-menu {
+        display: none;
+    }
+}
+
+
 a:hover {
     text-decoration: underline;
 }
