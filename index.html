@@ -5,16 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivere un' Esperienza unica IL GIAPPONE</title>
     <link rel="stylesheet" href="style.css">
+	<style>
+        /* Stile generale per le sezioni */
+.section {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Header della sezione */
+.section-header {
+    background-color: #f7f7f7;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Icona spoiler */
+.spoiler-icon {
+    font-size: 1.5em;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+/* Contenuto della sezione */
+.section-content {
+    padding: 15px;
+    display: none; /* Nascondi il contenuto di default */
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* Effetto di apertura e chiusura */
+@keyframes slideDown {
+    from { height: 0; opacity: 0; }
+    to { height: auto; opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { height: auto; opacity: 1; }
+    to { height: 0; opacity: 0; }
+}
+
+/* Modifica dell'icona quando la sezione è aperta */
+.section-header.active .spoiler-icon {
+    transform: rotate(45deg); /* Ruota l'icona per mostrare una "x" */
+}
+
+    </style>
 </head>
 <body>
     <!-- Contenitore delle parole chiave -->
     <div class="keyword-container">
-        <div class="keywords">
-            <span>Monte Fuji</span>
-            <span>Kyoto</span>
-            <span>Tokyo</span>
-            <!-- Aggiungi altre parole chiave qui -->
-        </div>
         <button class="hamburger-icon" onclick="toggleMenu()">&#9776;</button>
         <div class="dropdown-menu">
             <span>Monte Fuji</span>
@@ -55,9 +100,9 @@
 <!-- Altre sezioni della pagina web -->
 
     <section id="destinazione">
-        <h2>Destinazione</h2>
-        <p>
-Viaggio di gruppo in Giappone
+	<h2>Destinazione</h2>
+        
+        <p>Viaggio di gruppo in Giappone
 6-16 Novembre 2024
 
 Il Giappone ci aspetta! Un viaggio attraverso il Paese del Sol Levante, alla scoperta dei luoghi più iconici e di alcune gemme fuori dai circuiti turistici più famosi.
@@ -66,8 +111,8 @@ Da Tokyo a Kyoto a Osaka, dai treni proiettile alla cultura zen, in un paese dov
 
 Visiteremo un villaggio di epoca Edo, assisteremo alla cerimonia del te, gusteremo i piatti di una delle cucine più buone e ricercate, e vi guideremo attraverso un mondo completamente diverso dal nostro.
 
-Sarà un viaggio incredibile!
-</p>
+Sarà un viaggio incredibile!</p>
+
     </section>
 
 <section id="itinerario">
@@ -75,13 +120,27 @@ Sarà un viaggio incredibile!
     
     <!-- Giorno 0: Partenza -->
     <div class="giorno">
-        <h3>PARTENZA – 5 Novembre 2024 – Italia – Tokyo</h3>
+        <h3>PARTENZA</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>– 5 Novembre 2024 – Italia – Tokyo</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>VOLO Italia Tokyo (non incluso)</p>
+		</div>
+	
     </div>
 
     <!-- Giorno 1: Arrivo a Tokyo -->
     <div class="giorno">
-        <h3>GIORNO 1 – 6 Novembre 2024 – Tokyo</h3>
+        <h3>GIORNO 1</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>6 Novembre 2024 – Tokyo</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Arrivo all’aeroporto di Narita o Haneda, e trasferimento in hotel con servizio di Shuttle Bus (incluso).
             Pranzo libero.<br>
@@ -89,113 +148,184 @@ Sarà un viaggio incredibile!
             Visiteremo Center Gai e il Shibuya Sky (biglietto incluso).<br>
             Cena libera. Sistemazione in hotel, pernottamento.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 2: Tokyo -->
     <div class="giorno">
-        <h3>GIORNO 2 – 7 Novembre 2024 – Tokyo</h3>
+        <h3>GIORNO 2</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>7 Novembre 2024 – Tokyo</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Intera giornata dedicata alla scoperta di Tokyo utilizzando i mezzi pubblici. Visiteremo il SENSOJI TEMPLE e Nakamise Dori.<br>
             Pranzo libero. Nel pomeriggio, visita al quartiere di SHINJUKU per shopping e cena libera.
             Rientro in hotel per il pernottamento.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 3: Tokyo -->
     <div class="giorno">
-        <h3>GIORNO 3 – 8 Novembre 2024 – Tokyo</h3>
+        <h3>GIORNO 3</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>8 Novembre 2024 – Tokyo</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Visita alla zona di ASAKUSA, il cuore della vecchia Tokyo, con il suo famoso tempio Sensoji e il vivace mercato di Nakamise. 
             Tempo libero per il pranzo.<br>
             Nel pomeriggio, ci sposteremo ad AKIHABARA, il paradiso degli appassionati di elettronica e cultura pop giapponese. Cena libera.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 4: Hakone -->
     <div class="giorno">
-        <h3>GIORNO 4 – 9 Novembre 2024 – Tokyo – Hakone</h3>
+        <h3>GIORNO 4</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>9 Novembre 2024 – Tokyo – Hakone</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Partenza per Hakone, famosa per le sue sorgenti termali. Escursione in barca sul Lago Ashi e visita al santuario di Hakone.<br>
             Pranzo libero e possibilità di godere delle onsen (terme). Cena in Ryokan e pernottamento.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 5: Kyoto -->
     <div class="giorno">
-        <h3>GIORNO 5 – 10 Novembre 2024 – Hakone – Kyoto</h3>
+        <h3>GIORNO 5</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>10 Novembre 2024 – Hakone – Kyoto</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione in Ryokan.<br>
             Partenza con treno Shinkansen per Kyoto. Arrivo a Kyoto e trasferimento in hotel.<br>
             Visita al Kinkaku-ji (Padiglione d'Oro) e al tempio Ryoan-ji, famoso per il suo giardino zen.<br>
             Pranzo libero. Cena libera. Pernottamento in hotel.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 6: Kyoto -->
     <div class="giorno">
-        <h3>GIORNO 6 – 11 Novembre 2024 – Kyoto</h3>
+        <h3>GIORNO 6</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>11 Novembre 2024 – Kyoto</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Visita a Fushimi Inari, con i suoi iconici torii rossi, e al tempio Kiyomizu-dera, con vista panoramica sulla città.<br>
             Pranzo libero. Nel pomeriggio, passeggiata nel quartiere di Gion, famoso per le sue geishe e l'atmosfera tradizionale.<br>
             Cena libera. Pernottamento in hotel.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 7: Nara -->
     <div class="giorno">
-        <h3>GIORNO 7 – 12 Novembre 2024 – Kyoto – Nara – Kyoto</h3>
+        <h3>GIORNO 7</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>12 Novembre 2024 – Kyoto – Nara – Kyoto</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Escursione a Nara, antica capitale del Giappone, per visitare il tempio Todai-ji, che ospita una delle statue di Buddha più grandi del mondo, 
             e il parco dei cervi sacri.<br>
             Pranzo libero. Ritorno a Kyoto nel pomeriggio. Cena libera e pernottamento in hotel.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 8: Hiroshima -->
     <div class="giorno">
-        <h3>GIORNO 8 – 13 Novembre 2024 – Kyoto – Hiroshima – Miyajima</h3>
+        <h3>GIORNO 8</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>13 Novembre 2024 – Kyoto – Hiroshima – Miyajima</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Partenza in treno per Hiroshima. Visita al Parco della Pace e al Museo della Memoria.<br>
             Trasferimento in traghetto a Miyajima e visita del santuario di Itsukushima, famoso per il suo torii galleggiante.<br>
             Pranzo libero. Cena in Ryokan e pernottamento.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 9: Osaka -->
     <div class="giorno">
-        <h3>GIORNO 9 – 14 Novembre 2024 – Miyajima – Hiroshima – Osaka</h3>
+        <h3>GIORNO 9</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>14 Novembre 2024 – Miyajima – Hiroshima – Osaka</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione in Ryokan.<br>
             Rientro a Hiroshima e partenza in treno per Osaka.<br>
             Visita al castello di Osaka e passeggiata nel vivace quartiere di Dotonbori, famoso per le insegne luminose e la cucina locale.<br>
             Pranzo libero. Cena libera e pernottamento in hotel.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 10: Osaka -->
     <div class="giorno">
-        <h3>GIORNO 10 – 15 Novembre 2024 – Osaka</h3>
+        <h3>GIORNO 10</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>15 Novembre 2024 – Osaka</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Giornata libera a Osaka per shopping o visite individuali.<br>
             Possibilità di visitare il famoso Acquario di Osaka o fare un'escursione a Kobe. Pranzo e cena liberi.<br>
             Pernottamento in hotel.
         </p>
+		</div>
     </div>
 
     <!-- Giorno 11: Ritorno -->
     <div class="giorno">
-        <h3>GIORNO 11 – 16 Novembre 2024 – Osaka – Italia</h3>
+        <h3>GIORNO 11</h3>
+		<div class="section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <span>16 Novembre 2024 – Osaka – Italia</span>
+        <span class="spoiler-icon">+</span>
+    </div>
+    <div class="section-content">
         <p>
             Colazione a Buffet in hotel.<br>
             Trasferimento all'aeroporto di Kansai con servizio di Shuttle Bus (incluso) e volo di ritorno per l'Italia.
         </p>
+		</div>
     </div>
 
 </section>
@@ -262,6 +392,21 @@ Sarà un viaggio incredibile!
 function toggleContactMenu() {
     const contactMenu = document.querySelector('.contact-menu');
     contactMenu.style.display = contactMenu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+<script>
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const isOpen = content.style.display === "block";
+    
+    if (isOpen) {
+        content.style.display = "none";
+        header.classList.remove("active");
+    } else {
+        content.style.display = "block";
+        header.classList.add("active");
+    }
 }
 </script>
 

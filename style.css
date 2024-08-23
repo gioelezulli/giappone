@@ -229,9 +229,9 @@ a {
     color: #333;
 }
 
-/* Hamburger icon button - hidden on large screens */
+/* Hamburger icon button - visible on all screens */
 .hamburger-icon {
-    display: none;
+    display: block;
     background: none;
     border: none;
     font-size: 2em;
@@ -240,20 +240,21 @@ a {
     z-index: 1001;
 }
 
-/* Dropdown menu for small screens */
+/* Dropdown menu */
 .dropdown-menu {
     display: none;
     flex-direction: column;
     background-color: white;
     position: absolute;
-    top: 100%; /* Posiziona il menu subito sotto il tasto hamburger */
+    top: 100%; /* Posiziona il menu sotto l'icona dell'hamburger */
     right: 0;
     width: 200px; /* Larghezza del menu a tendina */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
-    z-index: 1100; /* Assicurati che sia sopra il resto della pagina */
+    z-index: 1100;
 }
 
+/* Stili delle voci del menu */
 .dropdown-menu span {
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
@@ -284,6 +285,14 @@ a {
 @media (min-width: 769px) {
     .dropdown-menu {
         display: none;
+    }
+	.hamburger-icon {
+        display: block;
+    }
+	.dropdown-menu {
+        top: 50px; /* Posiziona il menu immediatamente sotto il tasto hamburger */
+        right: auto;
+        left: 10px; /* Allinea il menu con il tasto hamburger a sinistra */
     }
 }
 
