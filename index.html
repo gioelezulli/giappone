@@ -22,7 +22,17 @@
             <span>Tokyo</span>
             <!-- Aggiungi altre parole chiave qui -->
         </div>
+
+    <!-- Bottone "Parla con noi" -->
+    <button class="contact-button" onclick="toggleContactMenu()">Parla con noi</button>
+    
+    <!-- Menu "Parla con noi" -->
+    <div class="contact-menu">
+        <span><a href="https://wa.me/your-whatsapp-number" target="_blank">WhatsApp</a></span>
+        <span><a href="mailto:your-email@example.com">E-mail</a></span>
+        <span><a href="#informazioni">Informazioni</a></span>
     </div>
+</div>
 
     <header>
   <div class="header-content">
@@ -247,5 +257,13 @@ Sarà un viaggio incredibile!
             dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
         }
     </script>
+	
+	<script>
+function toggleContactMenu() {
+    const contactMenu = document.querySelector('.contact-menu');
+    contactMenu.style.display = contactMenu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
 </body>
 </html>
