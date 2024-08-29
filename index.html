@@ -386,23 +386,57 @@ Sarà un viaggio incredibile!</p>
   </div>
 </div>
 	
+	<section id="contact">
+    <h2>Vuoi informazioni aggiuntive?</h2>
+    <form id="contact-form" action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Messaggio:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Invia</button>
+    </form>
+</section>
+
+	
     <footer>
         <p>&copy; 2024 Il Mio Viaggio</p>
     </footer>
 	
 	<script>
-        function toggleMenu() {
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
-        }
-    </script>
-	
-	<script>
+function toggleMenu() {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+}
+
 function toggleContactMenu() {
     const contactMenu = document.querySelector('.contact-menu');
     contactMenu.style.display = contactMenu.style.display === 'flex' ? 'none' : 'flex';
 }
+
+// Funzione per chiudere i menu cliccando fuori
+document.addEventListener('click', function(event) {
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const contactMenu = document.querySelector('.contact-menu');
+    const contactButton = document.querySelector('.contact-button');
+
+    // Controlla se il clic è avvenuto al di fuori del dropdownMenu e dell'icona hamburger
+    if (!dropdownMenu.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+
+    // Controlla se il clic è avvenuto al di fuori del contactMenu e del pulsante "Parla con noi"
+    if (!contactMenu.contains(event.target) && !contactButton.contains(event.target)) {
+        contactMenu.style.display = 'none';
+    }
+});
 </script>
+
 
 <script>
 function toggleSection(header) {
