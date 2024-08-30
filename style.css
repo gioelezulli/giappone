@@ -448,6 +448,24 @@ a:hover {
     font-size: 2.5em;
 }
 
+/* Stile per il form contact tasto overlay sopra ad invia */
+#submit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 /* Stile per il form contact */
 #contact-form {
     display: flex;

@@ -399,7 +399,8 @@ Sarà un viaggio incredibile!</p>
         <label for="message">Messaggio:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Invia</button>
+        <div id="submit-overlay" style="display: none;"></div>
+        <button type="submit" id="submit-button">Invia</button>
     </form>    
 </section>
 
@@ -490,6 +491,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         return; // Impedisce l'invio del modulo
     }
 
+    // Mostra l'overlay sopra il pulsante invia
+    const submitOverlay = document.getElementById('submit-overlay');
+    submitOverlay.style.display = 'flex';
+
     // Parametri per inviare l'email tramite EmailJS
     const templateParams = {
         name: name,
@@ -502,10 +507,16 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Il messaggio è stato inviato con successo!');
-            document.getElementById('contact-form').reset(); // Resetta il modulo			
+            document.getElementById('contact-form').reset(); // Resetta il modulo
+
+			// Nascondi l'overlay alla fine
+            submitOverlay.style.display = 'none';
         }, function(error) {
             console.log('FAILED...', error);
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
+
+            // Nascondi l'overlay in caso di errore
+            submitOverlay.style.display = 'none';
         });
 });
 </script>
