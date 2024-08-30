@@ -403,10 +403,12 @@ Sarà un viaggio incredibile!</p>
 </section>
 
 <!-- EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init("67kU6oB9ebhJTxs9o"); // Sostituisci con il tuo User ID di EmailJS
+      emailjs.init({
+        publicKey: "67kU6oB9ebhJTxs9o",
+      });
    })();
 </script>
 
