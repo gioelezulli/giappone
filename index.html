@@ -399,9 +399,13 @@ Sarà un viaggio incredibile!</p>
         <label for="message">Messaggio:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <div id="submit-overlay" style="display: none;"></div>
         <button type="submit" id="submit-button">Invia</button>
-    </form>    
+    </form>
+
+    <!-- Messaggio di invio in corso -->
+    <div id="sending-message" style="display: none;">
+        <p>Invio messaggio in corso... <span id="countdown">3</span></p>
+    </div>  
 </section>
 
 <!-- EmailJS SDK -->
@@ -491,9 +495,24 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         return; // Impedisce l'invio del modulo
     }
 
-    // Mostra l'overlay sopra il pulsante invia
-    const submitOverlay = document.getElementById('submit-overlay');
-    submitOverlay.style.display = 'flex';
+    // Mostra il messaggio di invio in corso
+    const sendingMessage = document.getElementById('sending-message');
+    const countdownElement = document.getElementById('countdown');
+    sendingMessage.style.display = 'block';
+
+    // Conto alla rovescia di 3 secondi
+    let countdown = 3;
+    const countdownInterval = setInterval(function() {
+        countdown--;
+        countdownElement.textContent = countdown;
+        if (countdown === 0) {
+            clearInterval(countdownInterval);
+            // Nascondi il messaggio di invio in corso dopo 1 secondo aggiuntivo
+            setTimeout(function() {
+                sendingMessage.style.display = 'none';
+            }, 1000);
+        }
+    }, 1000);
 
     // Parametri per inviare l'email tramite EmailJS
     const templateParams = {
@@ -508,15 +527,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             console.log('SUCCESS!', response.status, response.text);
             alert('Il messaggio è stato inviato con successo!');
             document.getElementById('contact-form').reset(); // Resetta il modulo
-
-			// Nascondi l'overlay alla fine
-            submitOverlay.style.display = 'none';
         }, function(error) {
             console.log('FAILED...', error);
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
-
-            // Nascondi l'overlay in caso di errore
-            submitOverlay.style.display = 'none';
         });
 });
 </script>
