@@ -401,6 +401,11 @@ Sarà un viaggio incredibile!</p>
 
         <button type="submit">Invia</button>
     </form>
+
+    <!-- Icona di caricamento -->
+    <div id="loading-icon" style="display: none;">
+        <img src="https://imgur.com/a/yHbXt2P" alt="Caricamento in corso..." width="50">
+    </div>
 </section>
 
 <!-- EmailJS SDK -->
@@ -488,7 +493,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     if (!emailPattern.test(email)) {
         alert("Per favore, inserisci un indirizzo email valido.");
         return; // Impedisce l'invio del modulo
-    }	
+    }
+
+    // Disabilita il pulsante di invio per prevenire click multipli
+    const submitButton = document.getElementById('submit-button');
+    submitButton.disabled = true;
+
+    // Mostra l'icona di caricamento
+    document.getElementById('loading-icon').style.display = 'block';	
 	
 	// Parametri per inviare l'email tramite EmailJS
     const templateParams = {
@@ -496,15 +508,24 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         email: email,
         message: message
     };
-
+	
+	// Invia l'email tramite EmailJS
     emailjs.send('service_ni4517o', 'template_mf8wq4i', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Il messaggio è stato inviato con successo!');
             document.getElementById('contact-form').reset(); // Resetta il modulo
+			
+			// Nasconde l'icona di caricamento e riabilita il pulsante
+            document.getElementById('loading-icon').style.display = 'none';
+            submitButton.disabled = false;
         }, function(error) {
             console.log('FAILED...', error);
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
+			
+			// Nasconde l'icona di caricamento e riabilita il pulsante
+            document.getElementById('loading-icon').style.display = 'none';
+            submitButton.disabled = false;
         });
 });
 </script>
