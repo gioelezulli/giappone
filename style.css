@@ -450,19 +450,22 @@ a:hover {
 
 /* Stile per il form contact testo sopra ad invia */
 #sending-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(192,192,192,0.3); /* Colore di sfondo semitrasparente */
+    color: red;
     padding: 20px;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 1.5em;
-    z-index: 1000;
+    font-size: 2em; /* Dimensione del testo più grande */
+    z-index: 1000; /* Assicurati che sia sopra altri elementi */
+    border-radius: 5px; /* Aggiungi angoli arrotondati se desiderato */
 }
-
 
 /* Stile per il form contact */
 #contact-form {
