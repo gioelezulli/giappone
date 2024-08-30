@@ -400,12 +400,7 @@ Sarà un viaggio incredibile!</p>
         <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Invia</button>
-    </form>
-
-    <!-- Icona di caricamento -->
-    <div id="loading-icon" style="display: none;">
-        <img src="https://imgur.com/a/yHbXt2P" alt="Caricamento in corso..." width="50">
-    </div>
+    </form>    
 </section>
 
 <!-- EmailJS SDK -->
@@ -498,9 +493,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Disabilita il pulsante di invio per prevenire click multipli
     const submitButton = document.getElementById('submit-button');
     submitButton.disabled = true;
-
-    // Mostra l'icona di caricamento
-    document.getElementById('loading-icon').style.display = 'block';	
 	
 	// Parametri per inviare l'email tramite EmailJS
     const templateParams = {
@@ -516,15 +508,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             alert('Il messaggio è stato inviato con successo!');
             document.getElementById('contact-form').reset(); // Resetta il modulo
 			
-			// Nasconde l'icona di caricamento e riabilita il pulsante
-            document.getElementById('loading-icon').style.display = 'none';
+			// Riabilita il pulsante
             submitButton.disabled = false;
         }, function(error) {
             console.log('FAILED...', error);
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
-			
-			// Nasconde l'icona di caricamento e riabilita il pulsante
-            document.getElementById('loading-icon').style.display = 'none';
+
+            // Riabilita il pulsante
             submitButton.disabled = false;
         });
 });
