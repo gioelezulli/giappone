@@ -402,6 +402,14 @@ Sarà un viaggio incredibile!</p>
     </form>
 </section>
 
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("67kU6oB9ebhJTxs9o"); // Sostituisci con il tuo User ID di EmailJS
+   })();
+</script>
+
 	
     <footer>
         <p>&copy; 2024 Il Mio Viaggio</p>
@@ -439,6 +447,7 @@ document.addEventListener('click', function(event) {
 
 
 <script>
+// Funzione per la barra che ti segue
 function toggleSection(header) {
     const content = header.nextElementSibling;
     const isOpen = content.style.display === "block";
@@ -452,6 +461,31 @@ function toggleSection(header) {
     }
 }
 </script>
+
+
+<script type="text/javascript">
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impedisce il comportamento predefinito del form
+
+    // Parametri per inviare l'email
+    const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_ni4517o', 'template_mf8wq4i', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Il messaggio è stato inviato con successo!');
+            document.getElementById('contact-form').reset(); // Resetta il modulo
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
+        });
+});
+</script>
+
 
 </body>
 </html>
