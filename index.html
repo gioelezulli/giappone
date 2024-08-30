@@ -386,6 +386,7 @@ Sarà un viaggio incredibile!</p>
   </div>
 </div>
 	
+<!-- sezione di contact form -->	
 	<section id="contact">
     <h2>Vuoi informazioni aggiuntive?</h2>
     <form id="contact-form" action="#" method="post">
@@ -407,7 +408,7 @@ Sarà un viaggio incredibile!</p>
 <script type="text/javascript">
    (function(){
       emailjs.init({
-        publicKey: "67kU6oB9ebhJTxs9o",
+        publicKey: "67kU6oB9ebhJTxs9o", // Sostituisci con la tua Public Key di EmailJS
       });
    })();
 </script>
@@ -469,11 +470,31 @@ function toggleSection(header) {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Impedisce il comportamento predefinito del form
 
-    // Parametri per inviare l'email
+    // Recupera i valori dei campi
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+	
+	// Regex per validare l'email
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    // Controlla se i campi sono popolati
+    if (name === "" || email === "" || message === "") {
+        alert("Per favore, compila tutti i campi richiesti.");
+        return; // Impedisce l'invio del modulo
+    }
+
+    // Controlla se l'email è valida
+    if (!emailPattern.test(email)) {
+        alert("Per favore, inserisci un indirizzo email valido.");
+        return; // Impedisce l'invio del modulo
+    }	
+	
+	// Parametri per inviare l'email tramite EmailJS
     const templateParams = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
+        name: name,
+        email: email,
+        message: message
     };
 
     emailjs.send('service_ni4517o', 'template_mf8wq4i', templateParams)
