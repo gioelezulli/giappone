@@ -470,20 +470,12 @@ function toggleSection(header) {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Impedisce il comportamento predefinito del form
 
-    // Variabile di stato per gestire l'invio
-    let isSubmitting = false;
-
-    // Controlla se il form è già in fase di invio
-    if (isSubmitting) {
-        return;
-    }
-
     // Recupera i valori dei campi
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
-	
-	// Regex per validare l'email
+
+    // Regex per validare l'email
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // Controlla se i campi sono popolati
@@ -497,15 +489,8 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         alert("Per favore, inserisci un indirizzo email valido.");
         return; // Impedisce l'invio del modulo
     }
-	
-	// Imposta la variabile di stato per indicare che l'invio è in corso
-    isSubmitting = true;
 
-    // Disabilita il pulsante di invio per prevenire click multipli
-    const submitButton = document.getElementById('submit-button');
-    submitButton.disabled = true;
-	
-	// Parametri per inviare l'email tramite EmailJS
+    // Parametri per inviare l'email tramite EmailJS
     const templateParams = {
         name: name,
         email: email,
@@ -517,18 +502,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert('Il messaggio è stato inviato con successo!');
-            document.getElementById('contact-form').reset(); // Resetta il modulo
-			
-			// Riabilita il pulsante e resetta la variabile di stato
-            submitButton.disabled = false;
-            isSubmitting = false;
+            document.getElementById('contact-form').reset(); // Resetta il modulo			
         }, function(error) {
             console.log('FAILED...', error);
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
-
-            // Riabilita il pulsante e resetta la variabile di stato in caso di errore
-            submitButton.disabled = false;
-            isSubmitting = false;
         });
 });
 </script>
