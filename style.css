@@ -456,14 +456,14 @@ a:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Colore di sfondo semitrasparente */
-    color: red;
+    color: #ffffff; /* Testo bianco per migliorare la leggibilità */
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em; /* Dimensione del testo più grande */
-    z-index: 1000; /* Assicurati che sia sopra altri elementi */
+    z-index: 1200; /* Assicurati che sia sopra altri elementi */
     border-radius: 5px; /* Aggiungi angoli arrotondati se desiderato */
 }
 
