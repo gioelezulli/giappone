@@ -62,7 +62,7 @@
     <div class="keyword-container">
         <button class="hamburger-icon" onclick="toggleMenu()">&#9776;</button>
         <div class="dropdown-menu">
-            <span>Monte Fuji</span>
+            <a href="chi-siamo.html"><span>Chi siamo</span></a>
             <span>Kyoto</span>
             <span>Tokyo</span>
             <!-- Aggiungi altre parole chiave qui -->
@@ -117,7 +117,16 @@ Sarà un viaggio incredibile!</p>
 
 <section id="itinerario">
     <h2>Itinerario</h2>
-    
+	
+    <!-- Mappa Interattiva di Google Maps -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1LaQn2hIqYcG2jlBzJgcJK4T-uMH-YdU&ehbc=2E312F&noprof=1" 
+                width="640" height="480" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+	</div>
+	<div class="itinerary-content">	
     <!-- Giorno 0: Partenza -->
     <div class="giorno">
         <h3>PARTENZA</h3>
@@ -326,6 +335,7 @@ Sarà un viaggio incredibile!</p>
         </p>
 		</div>		
     </div>
+	</div>
 
 </section>
 

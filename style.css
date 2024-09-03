@@ -514,3 +514,38 @@ a:hover {
 #contact-form button:hover {
     background-color: #0056b3;
 }
+
+/* Stile per pagina Chi siamo */
+#about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.photo-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px; /* Limita la larghezza massima della mappa */
+    margin: 0 auto 20px; /* Centra la mappa e aggiungi spazio inferiore */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiungi ombra per evidenziare la mappa */
+    border-radius: 5px; /* Aggiungi bordi arrotondati */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 480px; /* Altezza della mappa */
+    border: none; /* Rimuovi il bordo */
+}
