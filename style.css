@@ -549,3 +549,51 @@ a:hover {
     height: 480px; /* Altezza della mappa */
     border: none; /* Rimuovi il bordo */
 }
+
+
+/* Stile per pacchetti viaggio */
+#dettagli {
+    padding: 20px;
+    text-align: center;
+}
+
+.packages-container {
+    display: flex;
+    justify-content: space-around; /* Distribuisce uniformemente i pacchetti */
+    flex-wrap: wrap; /* Permette di andare a capo su schermi più piccoli */
+    margin-top: 20px;
+}
+
+.package {
+    background-color: #f4f4f4; /* Colore di sfondo chiaro per ogni pacchetto */
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    padding: 20px;
+    width: 30%; /* Ogni pacchetto occupa il 30% della larghezza */
+    min-width: 250px; /* Larghezza minima per schermi piccoli */
+    text-align: center;
+}
+
+.package h3 {
+    margin-bottom: 10px;
+    color: #007bff; /* Colore del titolo */
+}
+
+.package p {
+    margin: 10px 0;
+}
+
+.package button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.package button:hover {
+    background-color: #0056b3; /* Colore del bottone al passaggio del mouse */
+}
