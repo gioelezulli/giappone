@@ -597,3 +597,24 @@ a:hover {
 .package button:hover {
     background-color: #0056b3; /* Colore del bottone al passaggio del mouse */
 }
+
+/* Stile TABELLE per pacchetti viaggio */
+.info-table {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}

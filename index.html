@@ -370,23 +370,71 @@ Sarà un viaggio incredibile!</p>
             <h3>Pacchetto Base</h3>
             <p>Include noi che vi accompagnamo per tutto il viaggio	+ guida all'acquisto dei migliori voli e alloggi.</p>
             <p>Prezzo: 2000€ a persona</p>
-            <button>Dettagli</button>
+            <button onclick="toggleTable('base')">Dettagli</button>
+            
+            <!-- Tabella a tendina per Pacchetto Base -->
+            <div id="base-table" class="info-table" style="display: none;">
+                <table>
+                    <tr>
+                        <td>Volo di andata</td>
+                        <td>Prenotazione da Fiumicino ore 21, durata 16 ore</td>
+                    </tr>
+                    <tr>
+                        <td>Alloggio</td>
+                        <td>Hotel 3 stelle</td>
+                    </tr>
+                    <!-- Aggiungi qui altre righe per il Pacchetto Base -->
+                </table>
+            </div>
         </div>
+		
         
         <!-- Pacchetto Avanzato -->
         <div class="package">
             <h3>Pacchetto Avanzato</h3>
             <p>Include noi che vi accompagnamo per tutto il viaggio + resort 3 stelle o hotel 4 stelle + treni e metro giapponesi.</p>
             <p>Prezzo: 4000€ a persona</p>
-            <button>Dettagli</button>
+            <button onclick="toggleTable('avanzato')">Dettagli</button>
+            
+            <!-- Tabella a tendina per Pacchetto Avanzato -->
+            <div id="avanzato-table" class="info-table" style="display: none;">
+                <table>
+                    <tr>
+                        <td>Volo di andata</td>
+                        <td>Prenotazione da Milano ore 22, durata 14 ore</td>
+                    </tr>
+                    <tr>
+                        <td>Alloggio</td>
+                        <td>Hotel 4 stelle</td>
+                    </tr>
+                    <!-- Aggiungi qui altre righe per il Pacchetto Avanzato -->
+                </table>
+            </div>
         </div>
+		
+		
         
         <!-- Pacchetto Completo -->
         <div class="package">
             <h3>Pacchetto Completo</h3>
             <p>Include tutto il pacchetto avanzato + più voli di andata e ritorno.</p>
             <p>Prezzo: 6000€ a persona</p>
-            <button>Dettagli</button>
+            <button onclick="toggleTable('completo')">Dettagli</button>
+            
+            <!-- Tabella a tendina per Pacchetto Completo -->
+            <div id="completo-table" class="info-table" style="display: none;">
+                <table>
+                    <tr>
+                        <td>Volo di andata</td>
+                        <td>Prenotazione da Roma ore 23, durata 12 ore</td>
+                    </tr>
+                    <tr>
+                        <td>Alloggio</td>
+                        <td>Hotel 5 stelle con pasti inclusi</td>
+                    </tr>
+                    <!-- Aggiungi qui altre righe per il Pacchetto Completo -->
+                </table>
+            </div>
         </div>
     </div>
 </section>
@@ -573,6 +621,16 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             alert('Si è verificato un errore nell\'invio del messaggio. Riprova più tardi.');
         });
 });
+</script>
+
+<!-- script apri chiudi tabella per i pacchetti -->
+<script>
+function toggleTable(packageId) {
+    const table = document.getElementById(packageId + '-table');
+    const isVisible = table.style.display === 'block';
+    // Nasconde o mostra la tabella
+    table.style.display = isVisible ? 'none' : 'block';
+}
 </script>
 
 
