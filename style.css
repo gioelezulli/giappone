@@ -570,7 +570,7 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
     padding: 20px;
     width: 30%; /* Ogni pacchetto occupa il 30% della larghezza */
-    min-width: 250px; /* Larghezza minima per schermi piccoli */
+    min-width: 300px; /* Larghezza minima per schermi piccoli */
     text-align: center;
 }
 
